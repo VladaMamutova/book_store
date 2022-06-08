@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :books
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'sign_in', to: 'login#sign_in'
+  get 'sign_up', to: 'login#sign_up'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  post 'perform_sign_in', to: 'login#perform_sign_in'
+  post 'perform_sign_up', to: 'login#perform_sign_up'
+  post 'sign_out', to: 'login#sign_out'
+
+  resources :books
+
+  root 'welcome#start'
 end
