@@ -99,3 +99,5 @@ books.each do |book|
     author_id: book[:author_id]
   )
 end
+
+User.create(login: 'user', password: 'user', is_admin: false)
