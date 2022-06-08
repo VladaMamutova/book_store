@@ -1,0 +1,21 @@
+<h1 class="title">Вход</h1>
+
+<% if @error %>
+  <div class="error"><%= @error %></div>
+<% end %>
+
+<%= form_tag '/perform_sign_in' do %>
+  <div class="mt-8">
+    <%= label_tag 'login', 'Логин' %>
+    <%= text_field_tag 'login', '', placeholder: 'Например, ivanov' %>
+  </div>
+
+  <div class="mt-5">
+    <%= label_tag 'password', 'Пароль' %>
+    <%= password_field_tag 'password', '', placeholder: '**********' %>
+  </div>
+
+  <div class="mt-8">
+    <%= submit_tag 'Войти' %>
+  </div>
+<% end %>
