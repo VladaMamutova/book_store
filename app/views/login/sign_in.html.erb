@@ -1,0 +1,21 @@
+<% content_for :title do %>Вход<% end %>
+
+<% if @error %>
+  <div class="message error"><%= @error %></div>
+<% end %>
+
+<form action="/perform_sign_in" method="post">
+  <div class="mt-8">
+    <label for="login">Логин</label>
+    <input type="text" name="login" id="login" value="" placeholder="Например, ivanov">
+  </div>
+
+  <div class="mt-5">
+    <label for="password">Пароль</label>
+    <input type="password" name="password" id="password" value="" placeholder="**********">
+  </div>
+
+  <div class="mt-8">
+    <input type="submit" name="commit" value="Войти">
+  </div>
+</form>
