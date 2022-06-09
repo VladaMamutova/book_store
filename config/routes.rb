@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'perform_sign_up', to: 'login#perform_sign_up'
   post 'sign_out', to: 'login#sign_out'
 
-  resources :books
+  resources :books, only: %i[index new edit]
 
   root 'welcome#start'
 end
