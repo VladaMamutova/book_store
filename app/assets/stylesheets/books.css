@@ -8,9 +8,7 @@
 }
 
 .book:hover {
-  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --ring-shadow: 0 0 #0000;
-  box-shadow: var(--ring-shadow, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--shadow);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
 }
 
 .book__cover {

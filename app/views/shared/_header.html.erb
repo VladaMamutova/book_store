@@ -1,34 +1,24 @@
 <header>
-  <div class="container mx-auto px-6 py-4 space-x-10 border-b-2 border-gray-200 flex flex-wrap items-center justify-end">
-    <a href="/" class="flex flex-1 items-center">
-      <%= image_tag "book_lover", class: "h-16 w-auto", alt: 'Логотип' %>
-      <p class="uppercase text-lg pl-4 font-black no-underline text-indigo-600">Book Store</p>
+  <div class='header space-x'>
+    <a href='/' class='header__logo space-x'>
+      <%= image_tag 'book_lover', alt: 'Логотип' %>
+      <p>Book Store</p>
     </a>
-    
-    <nav class="flex space-x-10">
-      <a href="/books" class="text-lg font-medium text-gray-700 hover:text-gray-900">Книги</a>
+
+    <nav>
+      <a href='#' class='link'>Книги</a>
     </nav>
 
-    <% if @current_user %>
-      <div class="flex items-center justify-end flex-1 lg:w-0">
-          <p class="flex whitespace-nowrap text-lg font-medium text-gray-500 hover:text-gray-900 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-            <%= @current_user %>
-          </p>
-
-        <%= link_to "/sign_out", method: :post, class: "h-6 w-6 ml-6 text-gray-500 hover:text-gray-900 cursor-pointer", title: 'Выйти' do %>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-          </svg>
-        <% end %>
-      </div>
-    <% else %>
-      <div class="flex items-center justify-end flex-1 lg:w-0 space-x-10">
-        <a href="/sign_in" class="whitespace-nowrap text-lg font-medium text-gray-500 hover:text-gray-900">Вход</a>
-        <a href="/sign_up" class="whitespace-nowrap text-lg font-medium text-gray-500 hover:text-gray-900">Регистрация</a>
-      </div>
-    <% end %>
+    <nav class='navigation space-x'>
+      <% if @current_user %>
+        <div class='row user_info'>
+          <div class='icon user_icon'></div>
+          <span><%= @current_user %></span>
+        </div>
+      <% else %>
+        <a href='#' class='link'>Вход</a>
+        <a href='#' class='link'>Регистрация'</a>
+      <% end %>
+    </nav>
   </div>
 </header>

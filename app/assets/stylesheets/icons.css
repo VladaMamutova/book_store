@@ -1,0 +1,35 @@
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background-color: rgb(209 213 219);
+}
+
+a .icon:hover {
+  background-color: rgb(140, 148, 163);
+}
+
+.forward_icon {
+  margin-top: 0.5rem;
+  -webkit-mask-image: url("icons/forward_arrow.svg");
+  mask-image: url("icons/forward_arrow.svg");
+}
+
+.back_icon {
+  position: absolute;
+  margin-top: 0.5rem;
+  margin-left: -1rem;
+  -webkit-mask-image: url("icons/back_arrow.svg");
+  mask-image: url("icons/back_arrow.svg");
+}
+
+.user_icon {
+  -webkit-mask-image: url("icons/user.svg");
+  mask-image: url("icons/user.svg");
+}
+
+.sign_out_icon {
+  -webkit-mask-image: url("icons/sign_out.svg");
+  mask-image: url("icons/sign_out.svg");
+}
