@@ -1,7 +1,7 @@
-<h1 class="title">Регистрация</h1>
+<% content_for :title do %>Регистрация<% end %>
 
 <% if @error %>
-  <div class="error"><%= @error %></div>
+  <div class="message error"><%= @error %></div>
 <% end %>
 
 <%= form_tag '/perform_sign_up' do %>

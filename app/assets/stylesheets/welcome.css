@@ -1,22 +1,9 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+*= require application
+*/
 
-.welcome-container {
-	margin-left: auto;
-	margin-right: auto;
+.welcome_container {
+	margin: 0 auto;
 	padding: 6rem;
 	display: flex;
 	flex-direction: column;
@@ -29,12 +16,11 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.025em;
-  --tw-text-opacity: 1;
-  color: rgb(67 56 202 / var(--tw-text-opacity));
+  color: rgb(67 56 202);
   text-align: center;
   margin-bottom: 4rem;
 }
 
 .welcome__logo {
-  height: 24rem;
+  height: 22rem;
 }
