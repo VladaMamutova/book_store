@@ -7,12 +7,14 @@
 <% else %>
   <div id='books'>
     <% @books.each do |book| %>
-      <p><%= book.title %></p>
-      <p>Автор: <%= book.author.last_name %> <%= book.author.first_name[0] %>.
-        <%= book.author.middle_name.present? ? " #{book.author.middle_name[0]}." : '' %>
-      </p>
-      <p>Жанр: <%= book.genre.name %></p>
-      <br>
+      <%# Альтернативные варианты рендеринга частичного шаблона книги %>
+      <%#= render book %>
+      <%#= render 'book', book: book %>
+      <%#= render partial: 'book', locals: { book: book } %>
+      <%#= render partial: 'books/book', locals: { book: book } %>
+
+      <%# Рендеринг частичного шаблона книги с указанием специального макета %>
+      <%= render partial: 'book', layout: 'book_layout', locals: { book: book } %>
     <% end %>
   </div>
 <% end %>
