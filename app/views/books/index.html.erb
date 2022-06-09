@@ -5,7 +5,7 @@
 <% if @books.blank? %>
   <p>В магазине нет книг :(</p>
 <% else %>
-  <div id='books'>
+  <div id='books' class='space-y'>
     <% @books.each do |book| %>
       <%# Альтернативные варианты рендеринга частичного шаблона книги %>
       <%#= render book %>
