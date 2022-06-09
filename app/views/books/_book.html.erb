@@ -1,6 +1,4 @@
 <p><%= book.title %></p>
-<p>Автор: <%= book.author.last_name %> <%= book.author.first_name[0] %>.
-  <%= book.author.middle_name.present? ? " #{book.author.middle_name[0]}." : '' %>
-</p>
-<p>Жанр: <%= book.genre.name %></p>
+<p>Автор: <%= book.author %></p>
+<p>Жанр: <%= book.genre %></p>
 <br>
