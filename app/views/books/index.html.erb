@@ -1,0 +1,16 @@
+<% if @books.blank? %>
+  <p>В магазине нет книг :(</p>
+<% else %>
+  <div id='books'>
+    <% @books.each do |book| %>
+      <p><%= book.title %></p>
+      <p>Автор: <%= book.author.last_name %> <%= book.author.first_name[0] %>.
+        <%= book.author.middle_name.present? ? " #{book.author.middle_name[0]}." : '' %>
+      </p>
+      <p>Жанр: <%= book.genre.name %></p>
+      <br>
+    <% end %>
+  </div>
+<% end %>
+
+<b><%= link_to 'Добавить книгу', { action: :new } %></b>
