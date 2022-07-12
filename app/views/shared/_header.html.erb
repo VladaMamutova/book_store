@@ -6,7 +6,7 @@
     </a>
 
     <nav>
-      <a href='#' class='link'>Книги</a>
+      <%= link_to 'Книги', books_path, class: 'link' %>
     </nav>
 
     <nav class='navigation space-x'>
@@ -15,9 +15,13 @@
           <div class='icon user_icon'></div>
           <span><%= @current_user %></span>
         </div>
+
+        <%= link_to sign_out_path, method: :post, class: 'link', title: 'Выйти' do %>
+          <div class='icon sign_out_icon'></div>
+        <% end %>
       <% else %>
-        <a href='#' class='link'>Вход</a>
-        <a href='#' class='link'>Регистрация'</a>
+        <%= link_to 'Вход', sign_in_path, class: 'link' %>
+        <%= link_to 'Регистрация', sign_up_path, class: 'link' %>
       <% end %>
     </nav>
   </div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Store: <%= yield :title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <%= stylesheet_link_tag "application" %>
+    <%= yield :extra_stylesheets %>
+    <%= javascript_include_tag "application" %>
+  </head>
+
+  <body class='container'>
+    <%= render 'shared/header' %>
+
+    <div class='center_content'>
+    <%= link_to url_for(:back) do %>
+      <div class='icon back_icon'></div>
+    <% end %>
+
+    <h1 class='title'><%= yield :title %></h1>
+
+    <%= yield %>
+    </div>
+
+  </body>
+</html>

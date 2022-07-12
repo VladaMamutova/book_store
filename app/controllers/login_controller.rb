@@ -1,4 +1,6 @@
 class LoginController < ApplicationController
+  layout 'center_container'
+
   def sign_in; end
 
   def sign_up; end

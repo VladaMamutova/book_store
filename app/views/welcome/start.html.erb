@@ -3,3 +3,8 @@
 </h1>
 
 <%= image_tag 'book_lover', class: 'welcome__logo', alt: 'Welcome to Book Store'%>
+
+<%= link_to books_path, class: 'row link mt-8' do %>
+  <span>Перейти в магазин</span>
+  <div class='icon forward_icon'></div>
+<% end %>
