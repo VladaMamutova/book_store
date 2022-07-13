@@ -37,7 +37,7 @@ class LoginController < ApplicationController
   def user_params
     {
       login: params[:login],
-      is_admin: params[:is_admin],
+      is_admin: params[:is_admin] == '1',
       password: params[:password]
     }
   end

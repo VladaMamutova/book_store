@@ -1,1 +1,33 @@
 <% content_for :title do %>Регистрация<% end %>
+
+<% if @error %>
+  <div class="message error"><%= @error %></div>
+<% end %>
+
+<%= form_tag '/perform_sign_up' do %>
+  <div class="mt-8">
+    <%= label_tag 'login', 'Логин' %>
+    <%= text_field_tag 'login', '', placeholder: 'Например, ivanov' %>
+  </div>
+
+  <div class="mt-5">
+    <%= label_tag 'password', 'Пароль' %>
+    <%= password_field_tag 'password', '', placeholder: '**********' %>
+  </div>
+
+  <div class="mt-5">
+    <%= label_tag 'is_admin', 'Вы администратор?' %>
+    <%# Значение (value), указанное в check_box_tag, передаётся в params только когда,
+        когда чекбокс отмечен и не заблокирован.
+        Для корректной обработки неотмеченного чекбокса необходимо добавить
+        явную проверку на полученный параметр в контроллере: params[:is_admin] == '1'.
+        Обработку значения для отмеченного заблокированного чекбокса ("disabled: true") 
+        можно сделать с помощью hidden_field_tag.
+    <%= check_box_tag 'is_admin', '1', false %>
+    <span>Да</span>
+  </div>
+
+  <div class="mt-8">
+    <%= submit_tag 'Зарегистрироваться', data: { disable_with: 'Подождите...' } %>
+  </div>
+<% end %>
