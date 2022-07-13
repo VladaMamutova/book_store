@@ -4,18 +4,18 @@
   <div class="message error"><%= @error %></div>
 <% end %>
 
-<form action="/perform_sign_in" method="post">
+<%= form_tag '/perform_sign_in' do %>
   <div class="mt-8">
-    <label for="login">Логин</label>
-    <input type="text" name="login" id="login" value="" placeholder="Например, ivanov">
+    <%= label_tag 'login', 'Логин' %>
+    <%= text_field_tag 'login', '', placeholder: 'Например, ivanov' %>
   </div>
 
   <div class="mt-5">
-    <label for="password">Пароль</label>
-    <input type="password" name="password" id="password" value="" placeholder="**********">
+    <%= label_tag 'password', 'Пароль' %>
+    <%= password_field_tag 'password', '', placeholder: '**********' %>
   </div>
 
   <div class="mt-8">
-    <input type="submit" name="commit" value="Войти">
+    <%= submit_tag 'Войти', data: { disable_with: 'Подождите...' } %>
   </div>
-</form>
+<% end %>

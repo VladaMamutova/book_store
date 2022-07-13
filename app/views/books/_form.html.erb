@@ -1,0 +1,28 @@
+<%= form_tag book_path(book), method: :patch do %>
+  <% if book.errors.any? %>
+    <div class="message error"><%= book.errors.full_messages.join('<br>').html_safe %></div>
+  <% end %>
+
+  <% if notice %>
+    <div class="message notice"><%= notice %></div>
+  <% end %>
+
+  <div class="mt-8">
+    <%= label_tag 'title', 'Название' %>
+    <%= text_field_tag 'title', book.title %>
+  </div>
+
+  <div class="mt-5">
+    <%# генерация <label> для поля author_id с подписью "Автор" %>
+    <%# генерация <select> для выбора author_id из списка авторов %>
+  </div>
+
+  <div class="mt-5">
+    <%# генерация <label> для поля genre_id с подписью "Жанр" %>
+    <%# генерация <select> для выбора genre_id из списка жанров %>
+  </div>
+
+  <div class="mt-8" >
+    <%= submit_tag 'Обновить' %>
+  </div>
+<% end %>

@@ -14,7 +14,9 @@ class BooksController < ApplicationController
   end
 
   # GET /books/1/edit
-  def edit; end
+  def edit
+    render layout: 'center_container'
+  end
 
   # POST /books
   def create
@@ -31,7 +33,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to edit_book_url(@book), notice: 'Информация о книге успешно обновлена'
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, layout: 'center_container', status: :unprocessable_entity
     end
   end
 
