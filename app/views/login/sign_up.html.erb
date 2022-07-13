@@ -23,7 +23,18 @@
         явную проверку на полученный параметр в контроллере: params[:is_admin] == '1'.
         Обработку значения для отмеченного заблокированного чекбокса ("disabled: true") 
         можно сделать с помощью hidden_field_tag.
+    <%#= check_box_tag 'is_admin', '1', false %>
+
+    <%# При использовании hidden_field_tag с таким же name, как и у checkbox_tag,
+        в params всегда будет приходить результат выбора чекбокса.
+        При отмеченном чекбоксе в params записывается value из check_box_tag,
+        при неотмеченном или заблокированном чекбоксе ("disabled: true")
+        будет создан необходимый параметр с value у hidden_field_tag,
+        а затем обновлён с учётом value из check_box_tag.
+    <%= hidden_field_tag 'is_admin', '0' %>
     <%= check_box_tag 'is_admin', '1', false %>
+    <%#= check_box_tag 'is_admin', '1', true, disabled: true %>
+
     <span>Да</span>
   </div>
 

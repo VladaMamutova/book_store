@@ -7,3 +7,9 @@
   <p>Автор: <span><%= book.author.to_s(full: true) %></span></p>
   <p>Жанр: <span><%= book.genre %></span></p>
 </div>
+
+<% if @is_admin %>
+  <div class="pr-4">
+    <%= link_to 'Редактировать', edit_book_path(book), class: 'book__edit' %>
+  </div>
+<% end %>

@@ -37,7 +37,7 @@ class LoginController < ApplicationController
   def user_params
     {
       login: params[:login],
-      is_admin: params[:is_admin] == '1',
+      is_admin: params[:is_admin] == '1', # при hidden_field_tag необязательно
       password: params[:password]
     }
   end
