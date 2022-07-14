@@ -13,13 +13,17 @@
   </div>
 
   <div class="mt-5">
-    <%# генерация <label> для поля author_id с подписью "Автор" %>
-    <%# генерация <select> для выбора author_id из списка авторов %>
+    <%= label_tag 'author_id', 'Автор' %>
+    <% authors = Author.all.map { |author| [author.full_name, author.id] } %>
+    <% author_options = options_for_select(authors, book.author_id) %>
+    <%= select_tag 'author_id', author_options, class: 'select_list' %>
   </div>
 
   <div class="mt-5">
-    <%# генерация <label> для поля genre_id с подписью "Жанр" %>
-    <%# генерация <select> для выбора genre_id из списка жанров %>
+    <%= label_tag 'genre_id', 'Жанр' %>
+    <% genres = Genre.all.map { |genre| [genre.name, genre.id] } %>
+    <% genre_options = options_for_select(genres, book.genre_id) %>
+    <%= select_tag 'genre_id', genre_options, class: 'select_list' %>
   </div>
 
   <div class="mt-8" >
