@@ -1,11 +1,11 @@
 class BooksController < ApplicationController
-  layout 'main'
+  layout 'center_container'
 
   before_action :set_book, only: %i[show edit update destroy]
 
   # GET /books
   def index
-    @books = Book.all
+    render layout: 'main'
   end
 
   # GET /books/new
@@ -14,9 +14,7 @@ class BooksController < ApplicationController
   end
 
   # GET /books/1/edit
-  def edit
-    render layout: 'center_container'
-  end
+  def edit; end
 
   # POST /books
   def create
@@ -33,7 +31,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to edit_book_url(@book), notice: 'Информация о книге успешно обновлена'
     else
-      render :edit, layout: 'center_container', status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 

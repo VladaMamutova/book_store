@@ -2,6 +2,12 @@
   <title>Book Store: Книги</title>
 <% end %>
 
+<% if @is_admin %>
+  <div class='right_block' >
+  <%= link_to 'Добавить книгу', { action: :new }, { class: 'primary_button book__create' } %>
+  </div>
+<% end%>
+
 <% if @books.blank? %>
   <p>В магазине нет книг :(</p>
 <% else %>

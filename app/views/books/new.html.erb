@@ -1,3 +1,6 @@
-<% content_for :title do %>
-  <title>Book Store: Добавление книги</title>
+<% content_for :title do %>Добавление книги<% end %>
+<% content_for :extra_stylesheets do %>
+  <%= stylesheet_link_tag 'books' %>
 <% end %>
+
+<%= render 'form', book: @book %>
