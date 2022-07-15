@@ -22,9 +22,7 @@
 
   <div class="mt-5">
     <%= form.label :author_id, 'Автор' %>
-    <% authors = Author.all.map { |author| [author.full_name, author.id] } %>
-    <% author_options = options_for_select(authors, book.author_id) %>
-    <%= form.select 'author_id', author_options, { prompt: 'Выберите автора' }, { class: 'select_list' } %>
+    <%= form.select 'author_id', author_options(book.author_id), { prompt: 'Выберите автора' }, { class: 'select_list' } %>
   </div>
 
   <div class="mt-5">
